@@ -1,8 +1,17 @@
-function handleSubmit(e) {
+const form = document.getElementById("identicon-form")
+let big = document.getElementById('identicon')
 
-}
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("identicon-form")
-  form.addEventListener("submit", handleSubmit)
+
+form.addEventListener("submit", handleSubmit)
+
 })
+
+function handleSubmit(e) {
+  e.preventDefault()
+  let input = document.getElementById("text").value
+  let obj = new Identicon(input);
+  updateDOM(obj)
+
+}
